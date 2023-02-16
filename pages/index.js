@@ -4,9 +4,9 @@ import styles from "./index.module.css";
 
 
 export default function Home() {
-  const [animalInput, setAnimalInput] = useState("");
-  const [colorInput, setColorInput] = useState("");
-  const [personalityInput, setPersonalityInput] = useState("");
+  const [characterInput, setCharacterInput] = useState("");
+  const [ageInput, setAgeInput] = useState("");
+  const [genreInput, setGenreInput] = useState("");
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -17,7 +17,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput, color: colorInput, personality: personalityInput }),
+        body: JSON.stringify({ character: characterInput, age: ageInput, genre: genreInput }),
       });
 
       const data = await response.json();
@@ -46,46 +46,46 @@ export default function Home() {
         <h1>Tell me a story</h1>
 
         <form className="app" onSubmit={onSubmit}>
-          <label htmlFor="animal-category">Animal:</label>
+          <label htmlFor="animal-category">About :</label>
           <select
-            id="animal-category"
-            name="animal"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
+            id="character"
+            name="character"
+            value={characterInput}
+            onChange={(e) => setCharacterInput(e.target.value)}
           >
             <option value=""></option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
+            <option value="boy">Boy</option>
+            <option value="girl">Girl</option>
+            <option value="animal">Animal</option>
           </select>
   
-          <label htmlFor="color-category">Color:</label>
+          <label htmlFor="color-category">Age:</label>
           <select
-            id="color-category"
-            name="color"
-            value={colorInput}
-            onChange={(e) => setColorInput(e.target.value)}
+            id="age"
+            name="age"
+            value={ageInput}
+            onChange={(e) => setAgeInput(e.target.value)}
           >
             <option value=""></option>
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-            <option value="green">Green</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
           </select>
   
-          <label htmlFor="personality-category">Personality:</label>
+          <label htmlFor="genre">Story Genre:</label>
           <select
-            id="personality-category"
-            name="personality"
-            value={personalityInput}
-            onChange={(e) => setPersonalityInput(e.target.value)}
+            id="genre"
+            name="genre"
+            value={genreInput}
+            onChange={(e) => setGenreInput(e.target.value)}
           >
             <option value=""></option>
-            <option value="friendly">Friendly</option>
-            <option value="playful">Playful</option>
-            <option value="mischievous">Mischievous</option>
+            <option value="adventure">Adventure</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="detective">Detective</option>
           </select>
   
-          <input type="submit" value="Generate names" />
+          <input type="submit" value="Let's start" />
         </form>
         <div className={styles.result}>{result}</div>
       </main>
