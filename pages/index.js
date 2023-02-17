@@ -46,46 +46,46 @@ export default function Home() {
         <h1>Tell me a story</h1>
 
         <form className="app" onSubmit={onSubmit}>
-          <label htmlFor="animal-category">Animal:</label>
+          <label htmlFor="animal-category">About :</label>
           <select
-            id="animal-category"
-            name="animal"
+            id="character"
+            name="character"
             value={animalInput}
             onChange={(e) => setAnimalInput(e.target.value)}
           >
             <option value=""></option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
+            <option value="boy">Boy</option>
+            <option value="girl">Girl</option>
+            <option value="animal">Animal</option>
           </select>
   
-          <label htmlFor="color-category">Color:</label>
+          <label htmlFor="color-category">Age:</label>
           <select
-            id="color-category"
-            name="color"
+            id="age"
+            name="age"
             value={colorInput}
             onChange={(e) => setColorInput(e.target.value)}
           >
             <option value=""></option>
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-            <option value="green">Green</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
           </select>
   
-          <label htmlFor="personality-category">Personality:</label>
+          <label htmlFor="genre">Story Genre:</label>
           <select
-            id="personality-category"
-            name="personality"
+            id="genre"
+            name="genre"
             value={personalityInput}
             onChange={(e) => setPersonalityInput(e.target.value)}
           >
             <option value=""></option>
-            <option value="friendly">Friendly</option>
-            <option value="playful">Playful</option>
-            <option value="mischievous">Mischievous</option>
+            <option value="adventure">Adventure</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="detective">Detective</option>
           </select>
   
-          <input type="submit" value="Generate names" />
+          <input type="submit" value="Let's start" />
         </form>
         <div className={styles.result}>{result}</div>
       </main>

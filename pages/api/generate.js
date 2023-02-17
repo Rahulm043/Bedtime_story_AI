@@ -53,11 +53,7 @@ export default async function (req, res) {
 
 function generatePrompt(animal, color, personality) {
   
-  return `Suggest three names for an animal that is a superhero.
+  return `Tell a bedtime story about a ${animal} who is of a age -${color}, in the ${personality} genre.
 
-
-Animal: ${animal}
-Color: ${color}
-Personality: ${personality}
-Names:`;
+Story: `;
 }
