@@ -4,9 +4,9 @@ import styles from "./index.module.css";
 
 
 export default function Home() {
-  const [animalInput, setAnimalInput] = useState("");
-  const [colorInput, setColorInput] = useState("");
-  const [personalityInput, setPersonalityInput] = useState("");
+  const [characterInput, setCharacterInput] = useState("");
+  const [ageInput, setAgeInput] = useState("");
+  const [genreInput, setGenreInput] = useState("");
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -17,7 +17,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput, color: colorInput, personality: personalityInput }),
+        body: JSON.stringify({ character: characterInput, age: ageInput, genre: genreInput }),
       });
 
       const data = await response.json();
@@ -50,8 +50,8 @@ export default function Home() {
           <select
             id="character"
             name="character"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
+            value={characterInput}
+            onChange={(e) => setCharacterInput(e.target.value)}
           >
             <option value=""></option>
             <option value="boy">Boy</option>
@@ -63,8 +63,8 @@ export default function Home() {
           <select
             id="age"
             name="age"
-            value={colorInput}
-            onChange={(e) => setColorInput(e.target.value)}
+            value={ageInput}
+            onChange={(e) => setAgeInput(e.target.value)}
           >
             <option value=""></option>
             <option value="05">05</option>
@@ -76,8 +76,8 @@ export default function Home() {
           <select
             id="genre"
             name="genre"
-            value={personalityInput}
-            onChange={(e) => setPersonalityInput(e.target.value)}
+            value={genreInput}
+            onChange={(e) => setGenreInput(e.target.value)}
           >
             <option value=""></option>
             <option value="adventure">Adventure</option>

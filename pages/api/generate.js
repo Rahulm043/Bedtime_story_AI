@@ -15,9 +15,9 @@ export default async function (req, res) {
     return;
   }
 
-  const animal = req.body.animal || '';
-  const color = req.body.color || '';
-  const personality = req.body.personality || '';
+  const animal = req.body.character || '';
+  const color = req.body.age || '';
+  const personality = req.body.genre || '';
   if (animal.trim().length === 0) {
     res.status(400).json({
       error: {
@@ -51,9 +51,9 @@ export default async function (req, res) {
   }
 }
 
-function generatePrompt(animal, color, personality) {
+function generatePrompt(character, age, genre) {
   
-  return `Tell a bedtime story about a ${animal} who is of a age -${color}, in the ${personality} genre.
+  return `Tell a bedtime story about a ${character} who is of a age -${age}, in the ${genre} genre.
 
 Story: `;
 }
