@@ -53,7 +53,7 @@ export default async function (req, res) {
 
 function generatePrompt(character, age, genre) {
   
-  return `Tell a bedtime story about a ${character} who is of a age -${age}, in the ${age} genre.
+  return `Tell a bedtime story about a ${character} who is of a age -${age}, in the ${genre} genre.
 
 Story: `;
 }
